@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account | Stackly Corporate Training &amp; Development</title>
+  <meta name="description" content="Create a Stackly Corporate Training & Development learner or admin account.">
+  <link rel="icon" type="image/webp" href="assets/logo_lightpink.webp">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page ctd-auth-page">
+  <div class="auth-split-screen">
+    <div class="auth-form-side">
+      <div class="auth-card ctd-auth-card">
+        <div class="ctd-auth-card-head">
+          <a href="index.html" class="brand-logo"><img src="assets/logo_lightpink.webp" alt="Stackly Logo"></a>
+          <a href="login.html"><i class="fa-solid fa-right-to-bracket"></i> Sign In</a>
+        </div>
+        <h2>Create Your Stackly Account</h2>
+        <p class="auth-sub">Set up learner access or request admin dashboard access.</p>
+
+        <form id="registerForm" novalidate autocomplete="off">
+          <div class="role-cards" id="regRoles">
+            <label class="role-card is-selected">
+              <input type="radio" name="role" value="customer" checked>
+              <i class="fa-solid fa-graduation-cap"></i>
+              <strong>Learner</strong>
+              <span>View progress</span>
+            </label>
+            <label class="role-card">
+              <input type="radio" name="role" value="admin">
+              <i class="fa-solid fa-user-shield"></i>
+              <strong>Admin</strong>
+              <span>Manage cohorts</span>
+            </label>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="regFirstName">First Name</label>
+              <input id="regFirstName" name="firstname" type="text" placeholder="Rajesh" pattern="[A-Za-z ]+" title="Use alphabets and spaces only">
+              <div class="field-error" id="regFirstNameError"></div>
+            </div>
+            <div class="form-group">
+              <label for="regLastName">Last Name</label>
+              <input id="regLastName" name="lastname" type="text" placeholder="Kumar" pattern="[A-Za-z ]+" title="Use alphabets and spaces only">
+              <div class="field-error" id="regLastNameError"></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="regLearnerName">Company / Team Name</label>
+            <input id="regLearnerName" name="company" type="text" placeholder="e.g. Stackly Sales Team">
+            <div class="field-error" id="regCompanyError"></div>
+          </div>
+          <div class="form-group">
+            <label for="regEmail">Work Email</label>
+            <input id="regEmail" name="email" type="email" placeholder="name@company.com" autocomplete="email">
+            <div class="field-error" id="regEmailError"></div>
+          </div>
+          <div class="form-group">
+            <label for="regPassword">Password</label>
+            <div class="password-wrap">
+              <input id="regPassword" name="password" type="password" placeholder="Min. 8 characters" autocomplete="new-password">
+              <button type="button" class="toggle-password" data-target="regPassword" aria-label="Show password" aria-pressed="false"><i class="fa-solid fa-eye" aria-hidden="true"></i></button>
+            </div>
+            <div class="field-error" id="regPasswordError"></div>
+          </div>
+          <div class="form-group">
+            <label for="regConfirmPassword">Confirm Password</label>
+            <div class="password-wrap">
+              <input id="regConfirmPassword" name="confirm_password" type="password" placeholder="Re-enter password" autocomplete="new-password">
+              <button type="button" class="toggle-password" data-target="regConfirmPassword" aria-label="Show password" aria-pressed="false"><i class="fa-solid fa-eye" aria-hidden="true"></i></button>
+            </div>
+            <div class="field-error" id="regConfirmPasswordError"></div>
+          </div>
+          <label class="ctd-check-row" for="agreeTerms"><input id="agreeTerms" name="terms" type="checkbox"><span>I agree to the Stackly terms and privacy policy.</span></label>
+          <button type="submit" class="btn btn-primary ctd-full-btn"><i class="fa-solid fa-user-plus"></i> Create Account</button>
+        </form>
+        <div class="ctd-social-login">
+          <a href="404.html" class="ctd-social-btn ctd-social-btn-google"><i class="fa-brands fa-google"></i> Google</a>
+          <a href="404.html" class="ctd-social-btn ctd-social-btn-instagram"><i class="fa-brands fa-instagram"></i> Instagram</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="auth-content-side ctd-auth-visual">
+      <div class="auth-content-bg"><img src="assets/training-digital.webp" alt="Digital learning program"></div>
+      <div class="auth-content-body">
+        <a href="index.html" class="brand-logo ctd-auth-logo"><img src="assets/logo_lightpink.webp" alt="Stackly Logo"></a>
+        <span class="section-tag"><i class="fa-solid fa-sparkles"></i> Quick Setup</span>
+        <h1>Launch Training Access For Your Team</h1>
+        <p>Create an account to plan cohorts, track learner progress, download certificates, and coordinate training support with Stackly facilitators.</p>
+        <div class="ctd-auth-benefits">
+          <div><i class="fa-solid fa-users"></i><span>Team and learner profiles</span></div>
+          <div><i class="fa-solid fa-layer-group"></i><span>Program recommendations</span></div>
+          <div><i class="fa-solid fa-award"></i><span>Certificates and scorecards</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stackly-overlay" id="regSuccessModal" aria-live="polite">
+    <div class="stackly-modal">
+      <i class="fa-solid fa-circle-check ok"></i>
+      <h3>Account Created!</h3>
+      <p style="color:var(--text-muted);font-size:0.9rem;">Redirecting to login...</p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+

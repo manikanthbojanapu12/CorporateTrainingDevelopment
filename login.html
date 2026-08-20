@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Login | Stackly Corporate Training &amp; Development</title>
+  <meta name="description" content="Sign in to the Stackly Corporate Training & Development learner and admin portal.">
+  <link rel="icon" type="image/webp" href="assets/logo_lightpink.webp">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page ctd-auth-page">
+  <div class="auth-split-screen">
+    <div class="auth-content-side ctd-auth-visual">
+      <div class="auth-content-bg"><img src="assets/training-hero.webp" alt="Corporate training workshop"></div>
+      <div class="auth-content-body">
+        <a href="index.html" class="brand-logo ctd-auth-logo"><img src="assets/logo_lightpink.webp" alt="Stackly Logo"></a>
+        <span class="section-tag"><i class="fa-solid fa-lock"></i> Secure Training Portal</span>
+        <h1>Access Cohorts, Learning Records, And Training Dashboards</h1>
+        <p>Sign in as a learner to view your progress, certificates, and action plans. Facilitators and admins can manage cohorts, resources, reports, and delivery schedules.</p>
+        <div class="ctd-auth-benefits">
+          <div><i class="fa-solid fa-chart-line"></i><span>Progress scorecards and certificates</span></div>
+          <div><i class="fa-solid fa-calendar-check"></i><span>Cohort schedules and reminders</span></div>
+          <div><i class="fa-solid fa-list-check"></i><span>Action plans and assignments</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="auth-form-side">
+      <div class="auth-card ctd-auth-card">
+        <div class="ctd-auth-card-head">
+          <a href="index.html" class="brand-logo"><img src="assets/logo_lightpink.webp" alt="Stackly Logo"></a>
+          <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        </div>
+        <h2>Welcome Back</h2>
+        <p class="auth-sub">Choose your role and sign in to continue.</p>
+
+        <form id="loginForm" novalidate>
+          <div class="role-cards" id="loginRoles">
+            <label class="role-card is-selected">
+              <input type="radio" name="role" value="customer" checked>
+              <i class="fa-solid fa-graduation-cap"></i>
+              <strong>Learner</strong>
+              <span>Progress portal</span>
+            </label>
+            <label class="role-card">
+              <input type="radio" name="role" value="admin">
+              <i class="fa-solid fa-user-shield"></i>
+              <strong>Admin</strong>
+              <span>Training dashboard</span>
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label for="signInName">Full Name</label>
+            <input id="signInName" name="fullname" type="text" placeholder="Your full name" autocomplete="name" pattern="[A-Za-z ]+" title="Use alphabets and spaces only">
+            <div class="field-error" id="signInNameError"></div>
+          </div>
+          <div class="form-group">
+            <label for="signInEmail">Email Address</label>
+            <input id="signInEmail" name="email" type="email" placeholder="name@company.com" autocomplete="email">
+            <div class="field-error" id="signInEmailError"></div>
+          </div>
+          <div class="form-group">
+            <div class="ctd-form-label-row"><label for="signInPassword">Password</label><a href="404.html">Forgot?</a></div>
+            <div class="password-wrap">
+              <input id="signInPassword" name="password" type="password" placeholder="********" autocomplete="current-password">
+              <button type="button" class="toggle-password" data-target="signInPassword" aria-label="Show password" aria-pressed="false"><i class="fa-solid fa-eye" aria-hidden="true"></i></button>
+            </div>
+            <div class="field-error" id="signInPasswordError"></div>
+          </div>
+          <label class="ctd-check-row" for="rememberMe"><input type="checkbox" id="rememberMe"><span>Remember login on this device</span></label>
+          <button type="submit" class="btn btn-primary ctd-full-btn"><i class="fa-solid fa-right-to-bracket"></i> Sign In</button>
+        </form>
+        <div class="ctd-social-login">
+          <a href="404.html" class="ctd-social-btn ctd-social-btn-google"><i class="fa-brands fa-google"></i> Google</a>
+          <a href="404.html" class="ctd-social-btn ctd-social-btn-instagram"><i class="fa-brands fa-instagram"></i> Instagram</a>
+        </div>
+        <p class="ctd-auth-switch">New to Stackly? <a href="get-started.html">Create an account</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="stackly-overlay" id="loginConfirmOverlay" aria-live="polite">
+    <div class="stackly-modal">
+      <i class="fa-solid fa-circle-check ok"></i>
+      <h3>Authentication Successful!</h3>
+      <p style="color:var(--text-muted);font-size:0.9rem;">Redirecting...</p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+

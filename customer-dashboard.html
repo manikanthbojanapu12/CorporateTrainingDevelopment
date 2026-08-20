@@ -1,0 +1,492 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learner Portal | Stackly Corporate Training & Development</title>
+  <meta name="description" content="Manage learners, cohorts, learning notes and training check-in records at Stackly Corporate Training & Development, Salem.">
+  <link rel="icon" type="image/webp" href="assets/logo_lightpink.webp">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dash-page">
+<div class="page-wrapper">
+    <div class="dash-layout">
+      <aside class="dash-sidebar" id="dashSidebar">
+        <div class="sidebar-user-card">
+          <div class="sidebar-user-avatar js-user-initials">AK</div>
+          <div class="sidebar-user-details">
+            <div class="sidebar-user-name js-user-name">Anbarasan K</div>
+            <div class="sidebar-user-email js-user-email">anbarasan@stackly.com</div>
+          </div>
+        </div>
+        <div class="sidebar-role-card">
+          <i class="fas fa-graduation-cap"></i> <span>LEARNER DEVELOPMENT PORTAL</span>
+        </div>
+        <div class="dash-sidebar-nav-container">
+          <div class="dash-nav-label">Overview</div>
+          <button type="button" class="dash-nav-btn active" data-target="dashboardHome"><i class="fas fa-house"></i> Dashboard</button>
+          <div class="dash-nav-label">Learning</div>
+          <button type="button" class="dash-nav-btn" data-target="learners"><i class="fas fa-graduation-cap"></i> My Learning Plan</button>
+          <button type="button" class="dash-nav-btn" data-target="cohorts"><i class="fas fa-calendar-days"></i> Cohorts</button>
+          <button type="button" class="dash-nav-btn" data-target="records"><i class="fas fa-file-lines"></i> Records</button>
+          <button type="button" class="dash-nav-btn" data-target="learningTips"><i class="fas fa-lightbulb"></i> Learning Tips</button>
+          <div class="dash-nav-label">Account</div>
+          <button type="button" class="dash-nav-btn" data-target="notifications"><i class="fas fa-bell"></i> Notifications</button>
+          <button type="button" class="dash-nav-btn" data-target="settings"><i class="fas fa-gear"></i> Settings</button>
+        </div>
+        <a href="404.html" class="dash-hotline-card" style="display:block; text-decoration:none;">
+          <div class="dash-hotline-title"><i class="fas fa-phone-volume"></i> Support Hotline</div>
+          <span class="dash-hotline-num">+91 98765 43210</span>
+          <p>24/7 Salem support desk</p>
+        </a>
+        <button type="button" class="dash-nav-btn dash-logout-btn" data-logout><i class="fas fa-right-from-bracket"></i> Logout</button>
+      </aside>
+
+      <div class="dash-sidebar-overlay" id="dashOverlay"></div>
+
+      <header class="dash-top">
+        <div class="dash-top-left">
+          <div class="dash-top-logo-zone">
+            <button type="button" class="dash-menu-toggle" id="dashMenuToggle" aria-label="Open menu" aria-expanded="false">
+              <span class="menu-icon" aria-hidden="true"><i class="fas fa-bars"></i></span>
+              <span class="close-icon" aria-hidden="true"><i class="fas fa-xmark"></i></span>
+            </button>
+            <a href="index.html" class="dash-top-logo"><img src="assets/logo_lightpink.webp" alt="Stackly"></a>
+            <div class="dash-top-divider"></div>
+          </div>
+          <div class="dash-top-welcome">
+            <h2>Welcome back, <span class="js-user-name">Anbarasan</span></h2>
+            <p>Your training progress snapshot at Stackly Salem.</p>
+          </div>
+        </div>
+        <div class="dash-top-right">
+          <button type="button" class="dash-bell" data-target="notifications" title="Notifications" aria-label="Notifications">
+            <i class="fas fa-bell"></i><span class="dot"></span>
+          </button>
+          <div class="dash-user">
+            <div class="dash-avatar js-user-initials">AK</div>
+            <div class="dash-user-details">
+              <div class="dash-user-name js-user-name">Anbarasan K</div>
+              <div class="sidebar-user-email js-user-email">anbarasan@stackly.com</div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="dash-main">
+
+        <section class="dash-panel active" id="section-dashboardHome">
+          <div class="dash-card welcome-hub" style="background: linear-gradient(120deg, rgba(13, 27, 42, 0.94), rgba(0, 166, 166, 0.46)), url('assets/training-hero.webp') center/cover;">
+            <div class="welcome-hub-main">
+              <div class="welcome-head-inline">
+                <h3>Your learning dashboard starts here</h3>
+                <span class="welcome-tag"><span class="pulse-dot"></span> Action Due</span>
+              </div>
+              <p>Your next leadership cohort is due soon - confirm pre-work and workshop schedule.</p>
+            </div>
+            <div class="welcome-strip">
+              <div class="welcome-stat-pill">
+                <div class="stat-ico"><i class="fas fa-graduation-cap"></i></div>
+                <div class="stat-info">
+                  <h4>3</h4>
+                  <p>Learners Enrolled</p>
+                </div>
+              </div>
+              <div class="welcome-stat-pill">
+                <div class="stat-ico"><i class="fas fa-calendar-check"></i></div>
+                <div class="stat-info">
+                  <h4>Aug 12</h4>
+                  <p>Next Cohort</p>
+                </div>
+              </div>
+              <div class="welcome-stat-pill">
+                <div class="stat-ico"><i class="fas fa-graduation-cap"></i></div>
+                <div class="stat-info">
+                  <h4>92%</h4>
+                  <p>Progress Score</p>
+                </div>
+              </div>
+              <div class="welcome-right-cards">
+                <div class="welcome-feature-card">
+                  <img src="assets/training-analytics.webp" alt="Coach Priya Sharma">
+                  <div class="feature-body">
+                    <span class="feature-badge"><i class="fas fa-user-doctor"></i> On-Duty Facilitator</span>
+                    <h5 class="feature-title">Coach Priya</h5>
+                    <p class="feature-sub"><i class="fas fa-circle-check"></i> Facilitator</p>
+                  </div>
+                </div>
+                <div class="welcome-feature-card">
+                  <img src="assets/training-leadership.webp" alt="Learning Suite">
+                  <div class="feature-body">
+                    <span class="feature-badge" style="color: #4caf50;"><i class="fas fa-shield-heart"></i> Learning Desk</span>
+                    <h5 class="feature-title">Learning Suite</h5>
+                    <p class="feature-sub"><i class="fas fa-clock"></i> 24/7 Active</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dash-learner-strip">
+            <img src="assets/training-digital.webp" alt="Leadership Track">
+            <img src="assets/training-leadership.webp" alt="Communication Track">
+            <img src="assets/training-hero.webp" alt="Learner">
+          </div>
+
+          <div class="dash-grid dash-grid-4">
+            <div class="dash-card dash-card-bounce-icon"><div class="dash-ico"><i class="fas fa-graduation-cap"></i></div><h3>3</h3><p>Action Goals</p></div>
+            <div class="dash-card dash-card-bounce-icon"><div class="dash-ico"><i class="fas fa-calendar-check"></i></div><h3>Aug 12</h3><p>Next Cohort</p></div>
+            <div class="dash-card dash-card-bounce-icon"><div class="dash-ico"><i class="fas fa-list-check"></i></div><h3>2</h3><p>Check-ins Due</p></div>
+            <div class="dash-card dash-card-bounce-icon"><div class="dash-ico"><i class="fas fa-graduation-cap"></i></div><h3>92</h3><p>Progress Score</p></div>
+          </div>
+
+          <div class="dash-grid dash-grid-2" style="margin-top: 22px; grid-template-columns: 2fr 1fr;">
+            <div class="dash-card">
+              <div class="dash-card-head">
+                <h3 class="dash-card-title">Upcoming Cohort</h3>
+                <button type="button" class="btn btn-outline btn-sm" data-target="cohorts">View All</button>
+              </div>
+              <div class="notif-item">
+                <div class="notif-ico"><i class="fas fa-brain"></i></div>
+                <div>
+                  <strong>Leadership Track - Skill Check</strong>
+                  <p>Tue, Aug 12 | 10:30 AM | Coach Priya Sharma</p>
+                </div>
+                <span class="pill">Confirmed</span>
+              </div>
+              <div class="notif-item">
+                <div class="notif-ico"><i class="fas fa-comments"></i></div>
+                <div>
+                  <strong>Communication Track - Communication Lab</strong>
+                  <p>Fri, Aug 22 | 3:00 PM | Coach Anitha Ramesh</p>
+                </div>
+                <span class="pill warn">Pending</span>
+              </div>
+              <div class="stat-row" style="margin-top: 16px;"><span>Overall learning progress</span><span>92%</span></div>
+              <div class="bar-track"><span class="bar-fill" data-value="92"></span></div>
+            </div>
+            <div class="dash-card">
+              <h3 class="dash-card-title" style="margin-bottom: 14px;">Quick Actions</h3>
+              <div class="qa-grid">
+                <a class="qa-btn" href="404.html"><i class="fas fa-calendar-plus"></i> Plan Training</a>
+                <button type="button" class="qa-btn" data-target="learners"><i class="fas fa-graduation-cap"></i> My Learning Plan</button>
+                <button type="button" class="qa-btn" data-target="records"><i class="fas fa-file-lines"></i> Records</button>
+                <a class="qa-btn qa-btn-urgent" href="404.html"><i class="fas fa-phone-volume"></i> Priority Support</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="dash-grid dash-grid-3" style="margin-top: 22px;">
+            <div class="dash-card dash-card-tilt">
+              <div class="dash-card-img"><img src="assets/training-leadership.webp" alt="Practical exam tips"></div>
+              <h3 class="dash-card-title">Calm workshop routines</h3>
+              <p>How Stackly keeps teams focused during workshops.</p>
+            </div>
+            <div class="dash-card dash-card-tilt">
+              <div class="dash-card-img"><img src="assets/training-digital.webp" alt="Learning program"></div>
+              <h3 class="dash-card-title">Learning program</h3>
+              <p>Quarterly learning plans designed around your business calendar.</p>
+            </div>
+            <div class="dash-card dash-card-tilt">
+              <div class="dash-card-img"><img src="assets/training-digital.webp" alt="Ask Stackly"></div>
+              <h3 class="dash-card-title">Ask Stackly</h3>
+              <p>Message our learning desk for assignments, certificates, and cohort support.</p>
+            </div>
+          </div>
+        </section>
+
+
+        <section class="dash-panel" id="section-learners">
+          <div class="dash-card-head" style="margin-bottom: 18px;">
+            <div>
+              <h2 class="dash-section-title">My Learning Plan</h2>
+              <p class="dash-section-sub">Profiles registered at Stackly Salem.</p>
+            </div>
+            <a href="contact.html#book-visit" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Add Goal</a>
+          </div>
+          <div class="dash-grid dash-grid-3">
+            <div class="dash-card learner-profile-card">
+              <div class="dash-card-img"><img src="assets/training-digital.webp" alt="Leadership Track"></div>
+              <div class="learner-card-top">
+                <h3 class="dash-card-title">Leadership Track</h3>
+                <span class="pill">On Track</span>
+              </div>
+              <p>Primary learning goal</p>
+              <div class="learner-meta"><span><i class="fas fa-weight-scale"></i> Weekly</span><span><i class="fas fa-list-check"></i> Check-ins due</span></div>
+              <button type="button" class="btn btn-outline btn-sm" data-target="records" style="margin-top: 14px;">View Records</button>
+            </div>
+            <div class="dash-card learner-profile-card">
+              <div class="dash-card-img"><img src="assets/training-leadership.webp" alt="Communication Track"></div>
+              <div class="learner-card-top">
+                <h3 class="dash-card-title">Communication Track</h3>
+                <span class="pill warn">Stress watch</span>
+              </div>
+              <p>Stress support plan</p>
+              <div class="learner-meta"><span><i class="fas fa-weight-scale"></i> Biweekly</span><span><i class="fas fa-face-tired"></i> Workshop scheduled</span></div>
+              <button type="button" class="btn btn-outline btn-sm" data-target="cohorts" style="margin-top: 14px;">Cohorts</button>
+            </div>
+            <div class="dash-card learner-profile-card">
+              <div class="dash-card-img"><img src="assets/training-hero.webp" alt="Learner"></div>
+              <div class="learner-card-top">
+                <h3 class="dash-card-title">Learner</h3>
+                <span class="pill">Recovering</span>
+              </div>
+              <p>Recovery support goal</p>
+              <div class="learner-meta"><span><i class="fas fa-weight-scale"></i> Monthly</span><span><i class="fas fa-bandage"></i> Week 2 plan</span></div>
+              <button type="button" class="btn btn-outline btn-sm" data-target="learningTips" style="margin-top: 14px;">Learning Tips</button>
+            </div>
+          </div>
+        </section>
+
+
+        <section class="dash-panel" id="section-cohorts">
+          <div class="dash-card-head" style="margin-bottom: 18px;">
+            <div>
+              <h2 class="dash-section-title">Cohorts</h2>
+              <p class="dash-section-sub">Upcoming visits and recent history.</p>
+            </div>
+            <a href="contact.html#book-visit" class="btn btn-primary btn-sm"><i class="fas fa-calendar-plus"></i> Plan Training</a>
+          </div>
+          <div class="dash-card" style="margin-bottom: 22px;">
+            <h3 class="dash-card-title" style="margin-bottom: 12px;">Upcoming</h3>
+            <div class="notif-item">
+              <div class="notif-ico"><i class="fas fa-brain"></i></div>
+              <div><strong>Leadership Track - Annual Learning</strong><p>Aug 12, 2026 | 10:30 AM | Consult Room 2</p></div>
+              <span class="pill">Confirmed</span>
+            </div>
+            <div class="notif-item">
+              <div class="notif-ico"><i class="fas fa-face-tired"></i></div>
+              <div><strong>Communication Track - Communication Labing</strong><p>Aug 22, 2026 | 3:00 PM | Training Suite</p></div>
+              <span class="pill warn">Pending</span>
+            </div>
+            <div class="notif-item">
+              <div class="notif-ico"><i class="fas fa-comments"></i></div>
+              <div><strong>Productivity Follow-up</strong><p>Sep 2, 2026 | 11:00 AM | Learning Lab</p></div>
+              <span class="pill">Confirmed</span>
+            </div>
+          </div>
+          <div class="dash-card">
+            <h3 class="dash-card-title" style="margin-bottom: 12px;">Visit History</h3>
+            <div class="table-scroll">
+              <table class="dash-table">
+                <thead><tr><th>Date</th><th>Learner</th><th>Service</th><th>Facilitator</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td>Jul 18, 2026</td><td>Learner</td><td>Stress Recovery review</td><td>Coach Rajesh</td><td><span class="pill">Completed</span></td></tr>
+                  <tr><td>Jun 30, 2026</td><td>Leadership Track</td><td>Follow-up training booster</td><td>Coach Priya</td><td><span class="pill">Completed</span></td></tr>
+                  <tr><td>Jun 12, 2026</td><td>Communication Track</td><td>Stress support consult</td><td>Coach Anitha</td><td><span class="pill">Completed</span></td></tr>
+                  <tr><td>May 20, 2026</td><td>Leadership Track</td><td>Sleep support</td><td>Coach Senthil</td><td><span class="pill">Completed</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+
+        <section class="dash-panel" id="section-records">
+          <h2 class="dash-section-title">Learning Records</h2>
+          <p class="dash-section-sub" style="margin-bottom: 18px;">Learning Notes and learning check-in timeline.</p>
+          <div class="dash-grid dash-grid-2">
+            <div class="dash-card">
+              <h3 class="dash-card-title" style="margin-bottom: 14px;"><i class="fas fa-assignment highlight"></i> Learning Notes</h3>
+              <div class="record-item">
+                <strong>Productivity practice</strong>
+                <p>Leadership Track | Sleep support | Jul 2026 | 7 days</p>
+                <span class="pill">Active</span>
+              </div>
+              <div class="record-item">
+                <strong>Grounding routine</strong>
+                <p>Learner | Post-op comfort | Jul 2026 | tapering</p>
+                <span class="pill warn">Taper</span>
+              </div>
+              <div class="record-item">
+                <strong>Journaling plan</strong>
+                <p>Communication Track | Stress support | Jun 2026</p>
+                <span class="pill">Completed</span>
+              </div>
+            </div>
+            <div class="dash-card">
+              <h3 class="dash-card-title" style="margin-bottom: 14px;"><i class="fas fa-list-check highlight"></i> Learning Check-in Timeline</h3>
+              <div class="timeline">
+                <div class="timeline-item done"><strong>Intake</strong><p>Leadership Track | Jun 30, 2026</p></div>
+                <div class="timeline-item done"><strong>Training Plan</strong><p>Leadership Track | Jun 30, 2026</p></div>
+                <div class="timeline-item due"><strong>Team Workshop</strong><p>Communication Track | Due Aug 22, 2026</p></div>
+                <div class="timeline-item due"><strong>Stress Review</strong><p>Learner | Due Sep 5, 2026</p></div>
+              </div>
+              <div class="stat-row" style="margin-top: 16px;"><span>Learning plan progress</span><span>78%</span></div>
+              <div class="bar-track"><span class="bar-fill" data-value="78"></span></div>
+            </div>
+          </div>
+        </section>
+
+
+        <section class="dash-panel" id="section-learningTips">
+          <h2 class="dash-section-title">Learning Tips</h2>
+          <p class="dash-section-sub" style="margin-bottom: 18px;">Practical guidance from the Stackly training team.</p>
+          <div class="dash-grid dash-grid-3">
+            <div class="dash-card dash-card-tilt">
+              <div class="dash-card-img"><img src="assets/training-leadership.webp" alt="Exam prep"></div>
+              <h3 class="dash-card-title">Before the exam</h3>
+              <p>Skip heavy meals 2 hours prior and bring recent photos of symptoms.</p>
+            </div>
+            <div class="dash-card dash-card-tilt">
+              <div class="dash-card-img"><img src="assets/training-digital.webp" alt="Recovery"></div>
+              <h3 class="dash-card-title">Happy recovery</h3>
+              <p>Soft bedding, short leash walks, and meds on a fixed schedule.</p>
+            </div>
+            <div class="dash-card dash-card-tilt">
+              <div class="dash-card-img"><img src="assets/training-hero.webp" alt="Training prep"></div>
+              <h3 class="dash-card-title">Training day</h3>
+              <p>Arrive 20 minutes early; fasting instructions will be SMS'd the night before.</p>
+            </div>
+            <div class="dash-card dash-card-tilt">
+              <div class="dash-card-img"><img src="assets/training-digital.webp" alt="Consult"></div>
+              <h3 class="dash-card-title">Virtual consult</h3>
+              <p>Use Ask Stackly for follow-up questions between training center visits.</p>
+            </div>
+            <div class="dash-card dash-card-tilt">
+              <div class="dash-card-img"><img src="assets/training-digital.webp" alt="Learning"></div>
+              <h3 class="dash-card-title">Seasonal learning</h3>
+              <p>Tick prevention intensifies from June–October in Salem.</p>
+            </div>
+            <div class="dash-card dash-card-tilt">
+              <div class="dash-card-img"><img src="assets/training-hero.webp" alt="Productivity"></div>
+              <h3 class="dash-card-title">Productivity cadence</h3>
+              <p>Learner coats need monthly dematting; book Communication Track's next slot early.</p>
+            </div>
+          </div>
+        </section>
+
+
+        <section class="dash-panel" id="section-notifications">
+          <div class="dash-card-head" style="margin-bottom: 18px;">
+            <div>
+              <h2 class="dash-section-title">Notifications</h2>
+              <p class="dash-section-sub">Training Center updates and reminders.</p>
+            </div>
+            <button type="button" class="btn btn-outline btn-sm" id="markAllRead">Mark all as read</button>
+          </div>
+          <div class="dash-card">
+            <div class="notif-item unread">
+              <div class="notif-ico"><i class="fas fa-list-check"></i></div>
+              <div><strong>Learning reminder</strong><p>Communication Track's RCP booster is due on Aug 22.</p></div>
+              <span class="pill warn">New</span>
+            </div>
+            <div class="notif-item unread">
+              <div class="notif-ico"><i class="fas fa-calendar-check"></i></div>
+              <div><strong>Cohort confirmed</strong><p>Leadership Track's workshop is locked for Aug 12, 10:30 AM.</p></div>
+              <span class="pill">New</span>
+            </div>
+            <div class="notif-item unread">
+              <div class="notif-ico"><i class="fas fa-file-assignment"></i></div>
+              <div><strong>Assignment ready</strong><p>Learner's post-workshop certificate is available in the learning portal.</p></div>
+              <span class="pill">New</span>
+            </div>
+            <div class="notif-item">
+              <div class="notif-ico"><i class="fas fa-heart"></i></div>
+              <div><strong>Recovery milestone</strong><p>Learner completed week 1 of stress recovery recovery.</p></div>
+            </div>
+            <div class="notif-item">
+              <div class="notif-ico"><i class="fas fa-bullhorn"></i></div>
+              <div><strong>Training Center notice</strong><p>Extended evening hours every Thursday through September.</p></div>
+            </div>
+          </div>
+        </section>
+
+
+        <section class="dash-panel" id="section-settings">
+          <h2 class="dash-section-title">Account Settings</h2>
+          <p class="dash-section-sub" style="margin-bottom: 18px;">Keep your contact details current for SMS reminders.</p>
+          <div class="dash-grid dash-grid-2">
+            <div class="dash-card">
+              <h3 class="dash-card-title" style="margin-bottom: 16px;">Profile</h3>
+              <form id="settingsForm" class="dash-form">
+                <div class="form-group">
+                  <label for="settingsName">Full name</label>
+                  <input type="text" id="settingsName" name="name" value="Anbarasan K" required>
+                </div>
+                <div class="form-group">
+                  <label for="settingsEmail">Email</label>
+                  <input type="email" id="settingsEmail" name="email" value="anbarasan@stackly.com" required>
+                </div>
+                <div class="form-group">
+                  <label for="settingsPhone">Phone</label>
+                  <input type="tel" id="settingsPhone" name="phone" value="9876543210" maxlength="10">
+                </div>
+                <div class="form-group">
+                  <label for="settingsCity">City</label>
+                  <input type="text" id="settingsCity" name="city" value="Salem">
+                </div>
+                <button type="submit" class="btn btn-primary" onclick="window.location.href='404.html'; return false;">Save Profile</button>
+              </form>
+            </div>
+            <div class="dash-card">
+              <h3 class="dash-card-title" style="margin-bottom: 16px;">Preferences</h3>
+              <label class="switch-row">
+                <span>
+                  <strong>SMS appointment reminders</strong>
+                  <p>Get a text 24 hours before each visit.</p>
+                </span>
+                <input type="checkbox" class="switch-toggle" checked aria-label="SMS reminders">
+              </label>
+              <label class="switch-row">
+                <span>
+                  <strong>Learning check-in alerts</strong>
+                  <p>Notify me when boosters are within 14 days.</p>
+                </span>
+                <input type="checkbox" class="switch-toggle" checked aria-label="Learning check-in alerts">
+              </label>
+              <label class="switch-row">
+                <span>
+                  <strong>Learning tip emails</strong>
+                  <p>Occasional seasonal learner-learning guidance.</p>
+                </span>
+                <input type="checkbox" class="switch-toggle" aria-label="Learning tip emails">
+              </label>
+              <div class="dash-note">
+                <i class="fas fa-lock"></i>
+                <div>
+                  <strong>Password</strong>
+                  <p>To reset your password, sign out and use “Forgot password” on the login page.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="dash-panel active-extra dash-mini-insights" aria-label="Learner progress insights">
+          <div class="dash-grid dash-grid-3">
+            <div class="dash-card dash-insight-box"><span>Next</span><h3>Aug 12</h3><p>Leadership workshop</p></div>
+            <div class="dash-card dash-insight-box"><span>Progress</span><h3>92%</h3><p>Learning plan completion</p></div>
+            <div class="dash-card dash-insight-box"><span>Due</span><h3>2</h3><p>Action items pending</p></div>
+          </div>
+        </section>      </main>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="logoutModal">
+    <div class="modal-card">
+      <div class="modal-icon"><i class="fas fa-right-from-bracket"></i></div>
+      <h3>Heading out?</h3>
+      <p>You're about to sign out of your Stackly Learning account.</p>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-outline" id="cancelLogout">Stay Signed In</button>
+        <button type="button" class="btn btn-primary" id="confirmLogout">Yes, Log Out</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

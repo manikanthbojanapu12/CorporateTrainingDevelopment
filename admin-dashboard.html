@@ -1,0 +1,577 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Training Admin Portal | Stackly Corporate Training & Development</title>
+  <meta name="description" content="Admin portal for Stackly Corporate Training & Development Salem - manage workshop queue, learners, facilitators, and revenue.">
+  <link rel="icon" type="image/webp" href="assets/logo_lightpink.webp">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dash-page dash-page-admin">
+<div class="page-wrapper">
+    <div class="dash-layout">
+      <aside class="dash-sidebar" id="dashSidebar">
+        <div class="sidebar-user-card">
+          <div class="sidebar-user-avatar js-user-initials">DR</div>
+          <div class="sidebar-user-details">
+            <div class="sidebar-user-name js-user-name">Coach Rajesh Kumar</div>
+            <div class="sidebar-user-email js-user-email">admin@stackly.com</div>
+          </div>
+        </div>
+        <div class="sidebar-role-card admin">
+          <i class="fas fa-user-shield"></i> <span>TRAINING ADMIN</span>
+        </div>
+        <div class="dash-sidebar-nav-container">
+          <div class="dash-nav-label">Overview</div>
+          <button type="button" class="dash-nav-btn active" data-target="overview"><i class="fas fa-house"></i> Dashboard</button>
+          <div class="dash-nav-label">Training</div>
+          <button type="button" class="dash-nav-btn" data-target="learners"><i class="fas fa-hospital-user"></i> Learners</button>
+          <button type="button" class="dash-nav-btn" data-target="queue"><i class="fas fa-clipboard-list"></i> Cohort Queue</button>
+          <button type="button" class="dash-nav-btn" data-target="facilitators"><i class="fas fa-user-doctor"></i> Facilitators</button>
+          <button type="button" class="dash-nav-btn" data-target="services"><i class="fas fa-briefcase"></i> Programs</button>
+          <button type="button" class="dash-nav-btn" data-target="revenue"><i class="fas fa-indian-rupee-sign"></i> Training Revenue</button>
+          <button type="button" class="dash-nav-btn" data-target="reports"><i class="fas fa-chart-line"></i> Reports</button>
+          <div class="dash-nav-label">Account</div>
+          <button type="button" class="dash-nav-btn" data-target="notifications"><i class="fas fa-bell"></i> Notifications</button>
+          <button type="button" class="dash-nav-btn" data-target="settings"><i class="fas fa-gear"></i> Settings</button>
+          <button type="button" class="dash-nav-btn" data-target="support"><i class="fas fa-circle-question"></i> Support</button>
+        </div>
+        <button type="button" class="dash-nav-btn dash-logout-btn" data-logout><i class="fas fa-right-from-bracket"></i> Logout</button>
+      </aside>
+
+      <div class="dash-sidebar-overlay" id="dashOverlay"></div>
+
+      <header class="dash-top">
+        <div class="dash-top-left">
+          <div class="dash-top-logo-zone">
+            <button type="button" class="dash-menu-toggle" id="dashMenuToggle" aria-label="Open menu" aria-expanded="false">
+              <span class="menu-icon" aria-hidden="true"><i class="fas fa-bars"></i></span>
+              <span class="close-icon" aria-hidden="true"><i class="fas fa-xmark"></i></span>
+            </button>
+            <a href="index.html" class="dash-top-logo"><img src="assets/logo_lightpink.webp" alt="Stackly"></a>
+            <div class="dash-top-divider"></div>
+          </div>
+          <div class="dash-top-welcome">
+            <h2>Welcome back, <span class="js-user-name">Coach Rajesh</span></h2>
+            <p>Salem training operations hub - live cohorts and delivery.</p>
+          </div>
+        </div>
+        <div class="dash-top-right">
+          <button type="button" class="dash-bell" data-target="notifications" title="Notifications" aria-label="Notifications">
+            <i class="fas fa-bell"></i><span class="dot"></span>
+          </button>
+          <div class="dash-user">
+            <div class="dash-avatar js-user-initials">DR</div>
+            <div class="dash-user-details">
+              <div class="dash-user-name js-user-name">Coach Rajesh Kumar</div>
+              <div class="sidebar-user-email js-user-email">admin@stackly.com</div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="dash-main">
+
+        <section class="dash-panel active" id="section-overview">
+          <div class="dash-card welcome-hub" style="background: linear-gradient(120deg, rgba(13, 27, 42, 0.94), rgba(0, 166, 166, 0.46)), url('assets/training-hero.webp') center/cover;">
+            <div class="welcome-hub-main">
+              <div class="welcome-head-inline">
+                <h3>Training Operations Center</h3>
+                <span class="welcome-tag"><span class="pulse-dot"></span> Live Ops</span>
+              </div>
+              <p>Cohorts, training rooms, and billing for Stackly Salem - all in one hub.</p>
+            </div>
+            <div class="welcome-strip">
+              <div class="welcome-stat-pill">
+                <div class="stat-ico"><i class="fas fa-clipboard-list"></i></div>
+                <div class="stat-info">
+                  <h4>18</h4>
+                  <p>Workshops Today</p>
+                </div>
+              </div>
+              <div class="welcome-stat-pill">
+                <div class="stat-ico"><i class="fas fa-comments"></i></div>
+                <div class="stat-info">
+                  <h4>3</h4>
+                  <p>Active Workshops</p>
+                </div>
+              </div>
+              <div class="welcome-stat-pill">
+                <div class="stat-ico"><i class="fas fa-triangle-exclamation"></i></div>
+                <div class="stat-info">
+                  <h4>2</h4>
+                  <p>High Priority</p>
+                </div>
+              </div>
+              <div class="welcome-right-cards">
+                <div class="welcome-feature-card">
+                  <img src="assets/training-analytics.webp" alt="Coach Rajesh Kumar">
+                  <div class="feature-body">
+                    <span class="feature-badge"><i class="fas fa-user-shield"></i> Program Lead</span>
+                    <h5 class="feature-title">Coach Rajesh</h5>
+                    <p class="feature-sub"><i class="fas fa-circle-check"></i> On Duty</p>
+                  </div>
+                </div>
+                <div class="welcome-feature-card">
+                  <img src="assets/training-hero.webp" alt="Training Suite">
+                  <div class="feature-body">
+                    <span class="feature-badge" style="color: #4caf50;"><i class="fas fa-hospital"></i> Learning Lab</span>
+                    <h5 class="feature-title">Training Room 1</h5>
+                    <p class="feature-sub"><i class="fas fa-clock"></i> Live Ops</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dash-grid dash-grid-4">
+            <div class="dash-card dash-card-bounce-icon"><div class="dash-ico"><i class="fas fa-clipboard-list"></i></div><h3>18</h3><p>Workshops Today</p></div>
+            <div class="dash-card dash-card-bounce-icon"><div class="dash-ico"><i class="fas fa-comments"></i></div><h3>3</h3><p>Active Workshops</p></div>
+            <div class="dash-card dash-card-bounce-icon"><div class="dash-ico"><i class="fas fa-indian-rupee-sign"></i></div><h3>â‚¹48k</h3><p>Training Revenue Today</p></div>
+            <div class="dash-card dash-card-bounce-icon"><div class="dash-ico"><i class="fas fa-triangle-exclamation"></i></div><h3>2</h3><p>High Priority</p></div>
+          </div>
+
+          <div class="dash-grid dash-grid-2" style="margin-top: 22px; grid-template-columns: 2fr 1fr;">
+            <div class="dash-card">
+              <div class="dash-card-head">
+                <h3 class="dash-card-title">Today's Workshop Cohort Queue</h3>
+                <button type="button" class="btn btn-outline btn-sm" data-target="queue">Open Cohort Queue</button>
+              </div>
+              <div class="table-scroll">
+                <table class="dash-table">
+                  <thead><tr><th>Learner</th><th>Program Type</th><th>Reason</th><th>Priority</th><th>Action</th></tr></thead>
+                  <tbody>
+                    <tr>
+                      <td>Leadership Track (Learner)</td><td>Manager</td><td>Anxiety and sleep concerns</td>
+                      <td><span class="pill warn">Urgent</span></td>
+                      <td><button type="button" class="btn btn-primary btn-xs action-confirm-btn" data-booking-action="approve">Confirm</button></td>
+                    </tr>
+                    <tr>
+                      <td>Communication Track (Learner)</td><td>Team</td><td>Work stress support</td>
+                      <td><span class="pill">Routine</span></td>
+                      <td><button type="button" class="btn btn-primary btn-xs action-confirm-btn" data-booking-action="approve">Confirm</button></td>
+                    </tr>
+                    <tr>
+                      <td>Sales Track (Learner)</td><td>Manager</td><td>Urgent learning support</td>
+                      <td><span class="pill bad">High Priority</span></td>
+                      <td><button type="button" class="btn btn-primary btn-xs action-confirm-btn" data-booking-action="approve">Confirm</button></td>
+                    </tr>
+                    <tr>
+                      <td>Digital Skills Track (Learner)</td><td>Manager</td><td>Follow-up training</td>
+                      <td><span class="pill">Routine</span></td>
+                      <td><button type="button" class="btn btn-primary btn-xs action-confirm-btn" data-booking-action="approve">Confirm</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="dash-card">
+              <h3 class="dash-card-title" style="margin-bottom: 14px;">Quick Actions</h3>
+              <div class="qa-grid">
+                <button type="button" class="qa-btn" data-target="queue"><i class="fas fa-list-check"></i> Manage Cohort Queue</button>
+                <button type="button" class="qa-btn" data-target="learners"><i class="fas fa-user"></i> Learners</button>
+                <button type="button" class="qa-btn" data-target="facilitators"><i class="fas fa-user-doctor"></i> Facilitators</button>
+                <button type="button" class="qa-btn" data-target="revenue"><i class="fas fa-chart-pie"></i> Training Revenue</button>
+              </div>
+              <h3 class="dash-card-title" style="margin: 22px 0 12px;">Facilitators on Duty</h3>
+              <div class="duty-row">
+                <img src="assets/training-analytics.webp" alt="Coach Rajesh">
+                <div><strong>Coach Rajesh Kumar</strong><p>Training | Room 1</p></div>
+                <span class="status-dot status-dot--live"></span>
+              </div>
+              <div class="duty-row">
+                <img src="assets/training-leadership.webp" alt="Coach Priya">
+                <div><strong>Coach Priya Sharma</strong><p>Communication Lab | Room 2</p></div>
+                <span class="status-dot status-dot--live"></span>
+              </div>
+              <div class="duty-row">
+                <img src="assets/training-analytics.webp" alt="Coach Anitha">
+                <div><strong>Coach Anitha Ramesh</strong><p>Stress | Suite B</p></div>
+                <span class="status-dot status-dot--live"></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="dash-panel" id="section-learners">
+          <div class="dash-card-head" style="margin-bottom: 18px;">
+            <div>
+              <h2 class="dash-section-title">Learner Directory</h2>
+              <p class="dash-section-sub">Searchable records across Salem branch.</p>
+            </div>
+          </div>
+          <div class="dash-card" style="margin-bottom: 22px;">
+            <div class="dash-search-wrap">
+              <i class="fas fa-magnifying-glass"></i>
+              <input type="search" id="patientSearch" class="dash-search" placeholder="Search by learner, team, or programâ€¦" aria-label="Search learners">
+            </div>
+            <div class="table-scroll" style="margin-top: 16px;">
+              <table class="dash-table" id="patientTable">
+                <thead><tr><th>Learner</th><th>Owner</th><th>Program Type</th><th>Last Visit</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr data-search="bruno anbarasan canine beagle"><td>Leadership Track</td><td>Anbarasan K</td><td>Manager</td><td>Jun 30, 2026</td><td><span class="pill">Active</span></td></tr>
+                  <tr data-search="misty anbarasan feline persian"><td>Communication Track</td><td>Anbarasan K</td><td>Team</td><td>Jun 12, 2026</td><td><span class="pill warn">Watch</span></td></tr>
+                  <tr data-search="indie anbarasan canine indie"><td>Learner</td><td>Anbarasan K</td><td>Manager</td><td>Jul 18, 2026</td><td><span class="pill">Recovering</span></td></tr>
+                  <tr data-search="rocky meera canine indie"><td>Sales Track</td><td>Meera N</td><td>Manager</td><td>Aug 5, 2026</td><td><span class="pill bad">High Priority</span></td></tr>
+                  <tr data-search="luna karthik canine learning"><td>Digital Skills Track</td><td>Karthik S</td><td>Manager</td><td>Jul 28, 2026</td><td><span class="pill">Active</span></td></tr>
+                  <tr data-search="oreo deepa feline"><td>Nila</td><td>Deepa R</td><td>Team</td><td>Jul 10, 2026</td><td><span class="pill">Active</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="dash-grid dash-grid-3">
+            <div class="dash-card program-card">
+              <div class="dash-card-img"><img src="assets/training-digital.webp" alt="Managers"></div>
+              <h3 class="dash-card-title">Managers</h3>
+              <p>142 active learners | 9 in queue today</p>
+            </div>
+            <div class="dash-card program-card">
+              <div class="dash-card-img"><img src="assets/training-leadership.webp" alt="Teams"></div>
+              <h3 class="dash-card-title">Teams</h3>
+              <p>86 active learners | 5 stress holds</p>
+            </div>
+            <div class="dash-card program-card">
+              <div class="dash-card-img"><img src="assets/training-leadership.webp" alt="Exotics"></div>
+              <h3 class="dash-card-title">Exotics & Birds</h3>
+              <p>24 registered | specialist Thursdays</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="dash-panel" id="section-queue">
+          <h2 class="dash-section-title">Cohort Queue</h2>
+          <p class="dash-section-sub" style="margin-bottom: 18px;">Approve, confirm, or decline booking requests.</p>
+          <div class="dash-card">
+            <div class="table-scroll">
+              <table class="dash-table">
+                <thead><tr><th>Time</th><th>Learner / Owner</th><th>Service</th><th>Facilitator Pref</th><th>Status</th><th>Actions</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td>09:15</td><td>Leadership Track / Anbarasan</td><td>Learning</td><td>Coach Priya</td>
+                    <td><span class="pill warn">Pending</span></td>
+                    <td class="queue-actions">
+                      <button type="button" class="btn btn-primary btn-xs" data-booking-action="approve">Approve</button>
+                      <button type="button" class="btn btn-outline btn-xs" data-booking-action="decline">Decline</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>10:00</td><td>Sales Track / Meera</td><td>Trauma</td><td>Coach Rajesh</td>
+                    <td><span class="pill warn">Pending</span></td>
+                    <td class="queue-actions">
+                      <button type="button" class="btn btn-primary btn-xs" data-booking-action="approve">Confirm</button>
+                      <button type="button" class="btn btn-outline btn-xs" data-booking-action="decline">Decline</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>11:30</td><td>Communication Track / Anbarasan</td><td>Stress</td><td>Coach Anitha</td>
+                    <td><span class="pill warn">Pending</span></td>
+                    <td class="queue-actions">
+                      <button type="button" class="btn btn-primary btn-xs" data-booking-action="approve">Approve</button>
+                      <button type="button" class="btn btn-outline btn-xs" data-booking-action="decline">Decline</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>14:00</td><td>Digital Skills Track / Karthik</td><td>Follow-up training</td><td>Any</td>
+                    <td><span class="pill warn">Pending</span></td>
+                    <td class="queue-actions">
+                      <button type="button" class="btn btn-primary btn-xs" data-booking-action="approve">Approve</button>
+                      <button type="button" class="btn btn-outline btn-xs" data-booking-action="decline">Decline</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>15:45</td><td>Nila / Deepa</td><td>Productivity</td><td>Learning Lab</td>
+                    <td><span class="pill warn">Pending</span></td>
+                    <td class="queue-actions">
+                      <button type="button" class="btn btn-primary btn-xs" data-booking-action="approve">Approve</button>
+                      <button type="button" class="btn btn-outline btn-xs" data-booking-action="decline">Decline</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="dash-panel" id="section-facilitators">
+          <h2 class="dash-section-title">Facilitator Roster</h2>
+          <p class="dash-section-sub" style="margin-bottom: 18px;">Facilitators on the Stackly Salem team.</p>
+          <div class="dash-grid dash-grid-3">
+            <div class="dash-card facilitator-card">
+              <img class="facilitator-photo" src="assets/training-analytics.webp" alt="Coach Rajesh Kumar">
+              <h3 class="dash-card-title">Coach Rajesh Kumar</h3>
+              <p>Program Lead | Leadership Programs</p>
+              <div class="rating"><i class="fas fa-star"></i> 4.9 | 12 yrs</div>
+            </div>
+            <div class="dash-card facilitator-card">
+              <img class="facilitator-photo" src="assets/training-leadership.webp" alt="Coach Priya Sharma">
+              <h3 class="dash-card-title">Coach Priya Sharma</h3>
+              <p>Internal Medicine | Learning</p>
+              <div class="rating"><i class="fas fa-star"></i> 4.8 | 9 yrs</div>
+            </div>
+            <div class="dash-card facilitator-card">
+              <img class="facilitator-photo" src="assets/training-digital.webp" alt="Coach Anitha Ramesh">
+              <h3 class="dash-card-title">Coach Anitha Ramesh</h3>
+              <p>Stress & Soft Tissue</p>
+              <div class="rating"><i class="fas fa-star"></i> 4.7 | 8 yrs</div>
+            </div>
+            <div class="dash-card facilitator-card">
+              <img class="facilitator-photo" src="assets/training-analytics.webp" alt="Coach Senthil Nathan">
+              <h3 class="dash-card-title">Coach Senthil Nathan</h3>
+              <p>Priority Support & High Priority Learning</p>
+              <div class="rating"><i class="fas fa-star"></i> 4.8 | 11 yrs</div>
+            </div>
+            <div class="dash-card facilitator-card">
+              <img class="facilitator-photo" src="assets/training-analytics.webp" alt="Coach Meera Nambiar">
+              <h3 class="dash-card-title">Coach Meera Nambiar</h3>
+              <p>Dermatology | Allergy</p>
+              <div class="rating"><i class="fas fa-star"></i> 4.6 | 7 yrs</div>
+            </div>
+            <div class="dash-card facilitator-card">
+              <img class="facilitator-photo" src="assets/training-leadership.webp" alt="Coach Vikram Sethi">
+              <h3 class="dash-card-title">Coach Vikram Sethi</h3>
+              <p>Imaging | Assessments</p>
+              <div class="rating"><i class="fas fa-star"></i> 4.7 | 10 yrs</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="dash-panel" id="section-services">
+          <h2 class="dash-section-title">Services & Programs</h2>
+          <p class="dash-section-sub" style="margin-bottom: 18px;">Packages offered at the Salem training center.</p>
+          <div class="dash-grid dash-grid-2">
+            <div class="dash-card dash-card-tilt">
+              <div class="dash-card-img"><img src="assets/training-hero.webp" alt="Training"></div>
+              <h3 class="dash-card-title">Training Suite</h3>
+              <p>Stress Recovery, emotional resilience, and priority support procedures with dedicated recovery bays.</p>
+              <span class="pill" style="margin-top: 10px;">From â‚¹8,500</span>
+            </div>
+            <div class="dash-card dash-card-tilt">
+              <div class="dash-card-img"><img src="assets/training-leadership.webp" alt="Stress"></div>
+              <h3 class="dash-card-title">Stress Learning</h3>
+              <p>Full mouth exams, scaling, extractions, and pain-managed recovery.</p>
+              <span class="pill" style="margin-top: 10px;">From â‚¹3,200</span>
+            </div>
+            <div class="dash-card dash-card-tilt">
+              <div class="dash-card-img"><img src="assets/training-hero.webp" alt="Productivity"></div>
+              <h3 class="dash-card-title">Productivity</h3>
+              <p>Guided breathwork, emotional regulation practice, and calm daily routines.</p>
+              <span class="pill" style="margin-top: 10px;">From â‚¹1,200</span>
+            </div>
+            <div class="dash-card dash-card-tilt">
+              <div class="dash-card-img"><img src="assets/training-digital.webp" alt="Learning"></div>
+              <h3 class="dash-card-title">Learning Program</h3>
+              <p>Annual learning plans, progress tracking, and manager coaching consults.</p>
+              <span class="pill" style="margin-top: 10px;">From â‚¹4,999 / yr</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="dash-panel" id="section-revenue">
+          <h2 class="dash-section-title">Training Revenue</h2>
+          <p class="dash-section-sub" style="margin-bottom: 18px;">Billing snapshot for Salem branch.</p>
+          <div class="dash-grid dash-grid-4" style="margin-bottom: 22px;">
+            <div class="dash-card"><h3>â‚¹48.2k</h3><p>Today</p></div>
+            <div class="dash-card"><h3>â‚¹3.1L</h3><p>This Week</p></div>
+            <div class="dash-card"><h3>â‚¹12.4L</h3><p>This Month</p></div>
+            <div class="dash-card"><h3>94%</h3><p>Collection Rate</p></div>
+          </div>
+          <div class="dash-card">
+            <h3 class="dash-card-title" style="margin-bottom: 12px;">Recent Transactions</h3>
+            <div class="table-scroll">
+              <table class="dash-table">
+                <thead><tr><th>Invoice</th><th>Learner</th><th>Service</th><th>Amount</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td>#SV-4821</td><td>Learner</td><td>Ortho review</td><td>â‚¹2,800</td><td><span class="pill">Paid</span></td></tr>
+                  <tr><td>#SV-4820</td><td>Leadership Track</td><td>Check-ins</td><td>â‚¹1,650</td><td><span class="pill">Paid</span></td></tr>
+                  <tr><td>#SV-4819</td><td>Communication Track</td><td>Stress consult</td><td>â‚¹900</td><td><span class="pill warn">Pending</span></td></tr>
+                  <tr><td>#SV-4818</td><td>Sales Track</td><td>Trauma intake</td><td>â‚¹4,200</td><td><span class="pill">Paid</span></td></tr>
+                  <tr><td>#SV-4817</td><td>Digital Skills Track</td><td>Learning pack</td><td>â‚¹3,500</td><td><span class="pill">Paid</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="dash-panel" id="section-reports">
+          <h2 class="dash-section-title">Reports</h2>
+          <p class="dash-section-sub" style="margin-bottom: 18px;">Operational skill for the week.</p>
+          <div class="dash-grid dash-grid-3" style="margin-bottom: 22px;">
+            <div class="dash-card">
+              <h3 class="dash-card-title">Learner Satisfaction</h3>
+              <div class="stat-row"><span>Survey score</span><span>96%</span></div>
+              <div class="bar-track"><span class="bar-fill" data-value="96"></span></div>
+            </div>
+            <div class="dash-card">
+              <h3 class="dash-card-title">Recovery Rate</h3>
+              <div class="stat-row"><span>Post-op outcomes</span><span>91%</span></div>
+              <div class="bar-track"><span class="bar-fill" data-value="91"></span></div>
+            </div>
+            <div class="dash-card">
+              <h3 class="dash-card-title">Bed Occupancy</h3>
+              <div class="stat-row"><span>Practice labs</span><span>74%</span></div>
+              <div class="bar-track"><span class="bar-fill" data-value="74"></span></div>
+            </div>
+          </div>
+          <div class="dash-card">
+            <h3 class="dash-card-title" style="margin-bottom: 12px;">Top Services This Month</h3>
+            <div class="table-scroll">
+              <table class="dash-table">
+                <thead><tr><th>Service</th><th>Visits</th><th>Training Revenue</th><th>Trend</th></tr></thead>
+                <tbody>
+                  <tr><td>Learning & Check-ins</td><td>186</td><td>â‚¹3.8L</td><td><span class="pill">+12%</span></td></tr>
+                  <tr><td>Stress</td><td>64</td><td>â‚¹2.1L</td><td><span class="pill">+8%</span></td></tr>
+                  <tr><td>Training</td><td>28</td><td>â‚¹4.6L</td><td><span class="pill">+5%</span></td></tr>
+                  <tr><td>Productivity</td><td>112</td><td>â‚¹1.4L</td><td><span class="pill warn">+2%</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="dash-panel" id="section-notifications">
+          <div class="dash-card-head" style="margin-bottom: 18px;">
+            <div>
+              <h2 class="dash-section-title">Admin Inbox</h2>
+              <p class="dash-section-sub">Staff and system alerts.</p>
+            </div>
+            <button type="button" class="btn btn-outline btn-sm" id="markAllRead">Mark all as read</button>
+          </div>
+          <div class="dash-card">
+            <div class="notif-item unread">
+              <div class="notif-ico"><i class="fas fa-triangle-exclamation"></i></div>
+              <div><strong>High Priority admit</strong><p>Sales Track (Learner) flagged for trauma intake - OR standby requested.</p></div>
+              <span class="pill bad">Alert</span>
+            </div>
+            <div class="notif-item unread">
+              <div class="notif-ico"><i class="fas fa-box"></i></div>
+              <div><strong>Resource stock</strong><p>Productivity practice below reorder threshold.</p></div>
+              <span class="pill warn">New</span>
+            </div>
+            <div class="notif-item unread">
+              <div class="notif-ico"><i class="fas fa-calendar"></i></div>
+              <div><strong>Overbook risk</strong><p>Thursday Communication Lab already at 92% capacity.</p></div>
+              <span class="pill">New</span>
+            </div>
+            <div class="notif-item">
+              <div class="notif-ico"><i class="fas fa-user-check"></i></div>
+              <div><strong>Shift swap approved</strong><p>Coach Senthil covering Friday night priority support desk.</p></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="dash-panel" id="section-settings">
+          <h2 class="dash-section-title">Training Center Settings</h2>
+          <p class="dash-section-sub" style="margin-bottom: 18px;">Training Center profile and system skill.</p>
+          <div class="dash-grid dash-grid-2">
+            <div class="dash-card">
+              <h3 class="dash-card-title" style="margin-bottom: 16px;">Training Center Profile</h3>
+              <form id="settingsForm" class="dash-form">
+                <div class="form-group">
+                  <label for="training centerName">Training Center name</label>
+                  <input type="text" id="training centerName" value="Stackly Corporate Training & Development - Salem" required>
+                </div>
+                <div class="form-group">
+                  <label for="training centerPhone">Front desk phone</label>
+                  <input type="tel" id="training centerPhone" value="9876543210" maxlength="10">
+                </div>
+                <div class="form-group">
+                  <label for="trainingHours">Training hours</label>
+                  <input type="text" id="trainingHours" value="Monâ€“Sat 9:00 AM â€“ 8:00 PM">
+                </div>
+                <div class="form-group">
+                  <label for="training centerAddress">Address</label>
+                  <textarea id="training centerAddress" rows="3">Stackly Training Studio, Salem, Tamil Nadu</textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" onclick="window.location.href='404.html'; return false;">Save Settings</button>
+              </form>
+            </div>
+            <div class="dash-card">
+              <h3 class="dash-card-title" style="margin-bottom: 16px;">System Skill</h3>
+              <div class="skill-row ok"><i class="fas fa-circle-check"></i><div><strong>Intake board</strong><p>Online | synced 2 min ago</p></div></div>
+              <div class="skill-row ok"><i class="fas fa-circle-check"></i><div><strong>Learner interface</strong><p>Connected</p></div></div>
+              <div class="skill-row warn"><i class="fas fa-circle-exclamation"></i><div><strong>Learning platform feed</strong><p>Delayed 8 minutes</p></div></div>
+              <div class="stat-row" style="margin-top: 18px;"><span>Uptime (30d)</span><span>99.4%</span></div>
+              <div class="bar-track"><span class="bar-fill" data-value="99"></span></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="dash-panel" id="section-support">
+          <h2 class="dash-section-title">Support</h2>
+          <p class="dash-section-sub" style="margin-bottom: 18px;">Raise a ticket or use the training center hotline.</p>
+          <div class="dash-grid dash-grid-2">
+            <div class="dash-card">
+              <h3 class="dash-card-title" style="margin-bottom: 16px;">Submit a Ticket</h3>
+              <form id="supportForm" class="dash-form">
+                <div class="form-group">
+                  <label for="ticketSubject">Subject</label>
+                  <input type="text" id="ticketSubject" required placeholder="e.g. Cohort Queue board not refreshing">
+                </div>
+                <div class="form-group">
+                  <label for="ticketPriority">Priority</label>
+                  <select id="ticketPriority" class="js-sa-select" name="priority">
+                    <option value="normal" selected>Normal</option>
+                    <option value="high">High</option>
+                    <option value="critical">High Priority</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="ticketMessage">Details</label>
+                  <textarea id="ticketMessage" rows="4" required placeholder="Describe the issueâ€¦"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Ticket</button>
+              </form>
+            </div>
+            <div class="dash-card">
+              <h3 class="dash-card-title" style="margin-bottom: 14px;">Hotline & FAQ</h3>
+              <a href="404.html" class="dash-hotline-card inline" style="display:block; text-decoration:none;">
+                <div class="dash-hotline-title"><i class="fas fa-phone-volume"></i> Ops Hotline</div>
+                <span class="dash-hotline-num">+91 98765 43210</span>
+                <p>IT / facilities desk | 24/7</p>
+              </a>
+              <details class="dash-faq-item"><summary>How do I reassign a facilitator mid-queue?</summary><p>Open Cohort Queue â†’ select the booking â†’ Approve again after changing facilitator preference in the cohort detail.</p></details>
+              <details class="dash-faq-item"><summary>Where do I export monthly revenue?</summary><p>Training Revenue panel lists invoices; full CSV export is available from Settings â†’ System Skill (coming soon).</p></details>
+              <details class="dash-faq-item"><summary>Who unlocks critical platform overrides?</summary><p>Program Lead or on-call admin with TRAINING ADMIN role.</p></details>
+            </div>
+          </div>
+        </section>
+        <section class="dash-panel active-extra dash-mini-insights" aria-label="Training delivery insights">
+          <div class="dash-grid dash-grid-3">
+            <div class="dash-card dash-insight-box"><span>Design</span><h3>6</h3><p>Custom case packs in review</p></div>
+            <div class="dash-card dash-insight-box"><span>Delivery</span><h3>14</h3><p>Facilitator slots confirmed</p></div>
+            <div class="dash-card dash-insight-box"><span>Follow-up</span><h3>82%</h3><p>Action plans submitted</p></div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="logoutModal">
+    <div class="modal-card">
+      <div class="modal-icon"><i class="fas fa-right-from-bracket"></i></div>
+      <h3>Leaving the training center?</h3>
+      <p>You're about to sign out of the Stackly Training Center Admin portal.</p>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-outline" id="cancelLogout">Stay Signed In</button>
+        <button type="button" class="btn btn-primary" id="confirmLogout">Yes, Log Out</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
