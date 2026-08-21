@@ -7843,7 +7843,7 @@ body.dash-page .dash-card {
 
 .ctd-process-grid {
   display: grid;
-  gap: 1px;
+  gap: clamp(18px, 2vw, 26px);
   grid-template-columns: repeat(4, 1fr);
 }
 
@@ -7872,6 +7872,22 @@ body.dash-page .dash-card {
 
 .ctd-process-grid p {
   color: rgba(255, 255, 255, 0.72);
+}
+
+.ctd-value-grid,
+.ctd-package-grid,
+.ctd-rating-grid,
+.ctd-process-grid,
+.ctd-service-grid,
+.ctd-story-grid,
+.ctd-insight-grid,
+.ctd-testimonial-grid,
+.ctd-team-grid,
+.ctd-effect-grid,
+.ctd-auth-mini-grid,
+.ctd-contact-cards,
+.ctd-expert-grid {
+  gap: clamp(18px, 2vw, 28px);
 }
 
 .ctd-service-grid,
@@ -8779,6 +8795,22 @@ body.dash-page .dash-card {
     border-radius: 16px;
     padding: 20px;
   }
+}
+
+.ctd-value-grid,
+.ctd-package-grid,
+.ctd-rating-grid,
+.ctd-process-grid,
+.ctd-service-grid,
+.ctd-story-grid,
+.ctd-insight-grid,
+.ctd-testimonial-grid,
+.ctd-team-grid,
+.ctd-effect-grid,
+.ctd-auth-mini-grid,
+.ctd-contact-cards,
+.ctd-expert-grid {
+  gap: clamp(18px, 2vw, 28px);
 }
 
 

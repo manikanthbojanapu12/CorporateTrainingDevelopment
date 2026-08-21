@@ -103,6 +103,11 @@
     ctx.stroke();
   }
 
+  function isDarkCursorZone(x, y) {
+    const target = document.elementFromPoint(x, y);
+    return Boolean(target?.closest('.ctd-hero, .hero-section, .page-hero, .footer, .ctd-process-strip'));
+  }
+
   function drawSpider() {
     if (!pointer.seen) {
       ctx.clearRect(0, 0, width, height);
@@ -118,23 +123,33 @@
     ctx.save();
     ctx.lineCap = 'round';
     ctx.lineJoin = 'round';
+    const onDarkSurface = isDarkCursorZone(pointer.x, pointer.y);
+    const webColor = onDarkSurface ? 'rgba(255, 178, 56, 0.58)' : 'rgba(13, 27, 42, 0.28)';
+    const bodyColor = onDarkSurface ? '#fff6df' : '#0d1b2a';
+    const eyeColor = onDarkSurface ? '#16a34a' : '#f9b233';
 
     const anchorX = Math.min(width - 18, Math.max(18, spider.x + Math.sin(pulse * 0.45) * 22));
-    ctx.strokeStyle = 'rgba(13, 27, 42, 0.28)';
+    ctx.strokeStyle = webColor;
     ctx.lineWidth = 1.15;
     ctx.beginPath();
     ctx.moveTo(anchorX, 0);
     ctx.quadraticCurveTo(anchorX, spider.y * 0.42, spider.x, spider.y - 18);
     ctx.stroke();
 
-    ctx.strokeStyle = '#0d1b2a';
+    if (onDarkSurface) {
+      ctx.shadowColor = 'rgba(0, 0, 0, 0.45)';
+      ctx.shadowBlur = 5;
+      ctx.shadowOffsetY = 1;
+    }
+
+    ctx.strokeStyle = bodyColor;
     ctx.lineWidth = 2;
     for (let i = 0; i < 4; i++) {
       drawLeg(spider.x, spider.y, -1, i, pulse);
       drawLeg(spider.x, spider.y, 1, i, pulse + Math.PI);
     }
 
-    ctx.fillStyle = '#0d1b2a';
+    ctx.fillStyle = bodyColor;
     ctx.beginPath();
     ctx.ellipse(spider.x, spider.y + 2, 8, 10, 0, 0, Math.PI * 2);
     ctx.fill();
@@ -142,7 +157,9 @@
     ctx.ellipse(spider.x, spider.y - 9, 6, 6, 0, 0, Math.PI * 2);
     ctx.fill();
 
-    ctx.fillStyle = '#f9b233';
+    ctx.shadowBlur = 0;
+    ctx.shadowOffsetY = 0;
+    ctx.fillStyle = eyeColor;
     ctx.beginPath();
     ctx.arc(spider.x - 2.5, spider.y - 10, 1.1, 0, Math.PI * 2);
     ctx.arc(spider.x + 2.5, spider.y - 10, 1.1, 0, Math.PI * 2);
